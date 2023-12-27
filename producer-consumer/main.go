@@ -52,8 +52,8 @@ func Producer(idx int, done <-chan struct{}, products chan<- int) {
 	}
 }
 
-func Consumer(idx int, product <-chan int) {
-	for value := range product {
+func Consumer(idx int, products <-chan int) {
+	for value := range products {
 		fmt.Printf("Consumer %d receive %d\n", idx, value)
 	}
 }
